@@ -25,15 +25,26 @@
 // ! Homework: JS. Objects
 
 // 1. Створити об'єкт customer, що містить такі властивості:
-// ім'я,
-// прізвище,
-// електронна адреса,
-// password,
-// номер телефона,
-// адреса (є рядком або *об'єктом з властивостями місто, вулиця, дім, квартира) ;
-// методи:
-// виведення адреси,
-// зміна номера телефону (метод повинен приймати як параметр рядок з новим номером телефону).
+
+const customer = {
+  firstName: "Maria", // ім'я,
+  lastName: "Sorokina", // прізвище,
+  email: "sorokina@gmail.com", // електронна адреса,
+  password: "qwerty", // password,
+  phoneNumber: "+380000000000", // номер телефона,
+  address: "Lviv, Shevchenka 3/10", // адреса (є рядком або *об'єктом з властивостями місто, вулиця, дім, квартира) ;
+  outputAddress() {
+    return `${this.address}`; // метод виведення адреси,
+  },
+  changePhoneNumber(newPhoneNumber) {
+    return (this.phoneNumber = newPhoneNumber); // метод зміни номера телефону
+  },
+};
+
+console.log(customer.outputAddress());
+console.log(customer.phoneNumber);
+console.log(customer.changePhoneNumber("+380999999999"));
+
 // Додати об'єкту властивість isMale (для позначення статі, true - male, false - female).
 // Видалити у об'єкта властивість адреса.
 
